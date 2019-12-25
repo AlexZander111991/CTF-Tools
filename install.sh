@@ -23,7 +23,6 @@ apt-get install tcpdump
 apt-get install netcat
 apt-get install strings
 apt-get install file
-apt-get install file
 apt-get install burpsuite
 apt-get install hashcat
 apt-get install vim

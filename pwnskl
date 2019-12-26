@@ -1,0 +1,49 @@
+#!/bin/bash
+
+red=`tput setaf 1`
+green=`tput setaf 2`
+reset=`tput sgr0`
+
+echo "${green}Your Binary name Please.${reset}"
+
+read biname
+
+echo "${green}Do you want Debug mode?${reset}"
+
+read debug
+
+echo "#!/usr/bin/python" > exploit.py
+
+echo "" >> exploit.py
+
+echo "from pwn import *" >> exploit.py
+
+echo "" >> exploit.py
+
+echo "context(os='linux',arch='amd64')" >> exploit.py
+
+if [ $debug = yes ]
+
+then
+
+echo "context.log_level = 'DEBUG'" >> exploit.py
+
+echo "" >> exploit.py
+
+echo "p = process('./$biname')" >> exploit.py
+
+chmod +x exploit.py
+
+echo "${green}Your Skeleton for PWN Tools is Redy${reset}"
+
+else
+
+echo "" >> exploit.py
+
+echo "p = process('./$biname')" >> exploit.py
+
+chmod +x exploit.py
+
+echo "${green}Your Skeleton for PWN Tools is Redy${reset}"
+
+fi 
